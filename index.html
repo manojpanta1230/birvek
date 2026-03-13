@@ -7,6 +7,8 @@
     <title>BIRVEX Tech Pvt. Ltd.</title>
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet">
@@ -149,6 +151,38 @@
             color: var(--white);
         }
 
+        .nav-social {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-social a {
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+
+        .nav-social a i {
+            line-height: 1;
+            display: block;
+        }
+
+        .nav-social a:hover {
+            color: var(--white);
+            border-color: var(--green);
+            background: rgba(243, 171, 45, 0.12);
+            transform: translateY(-1px);
+        }
+
         .nav-cta {
             padding: 11px 26px;
             border-radius: 7px;
@@ -234,6 +268,35 @@
 
         .mob-menu a:hover {
             color: var(--green);
+        }
+
+        .mob-social {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 6vw 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .mob-social a {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.92rem;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .mob-social a:hover {
+            color: var(--white);
+            border-color: var(--green);
+            background: rgba(243, 171, 45, 0.12);
         }
 
         /* HERO */
@@ -1404,11 +1467,16 @@
             }
 
             .nav-links,
-            .nav-cta {
+            .nav-cta,
+            .nav-social {
                 display: none;
             }
 
             .hamburger {
+                display: flex;
+            }
+
+            .mob-social {
                 display: flex;
             }
 
@@ -1466,6 +1534,16 @@
             <li><a href="#leadership">Leadership</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/birvex-tech-pvt-ltd" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
         <a href="#contact" class="nav-cta">Get a Quote</a>
         <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
     </nav>
@@ -1475,6 +1553,16 @@
         <a href="#process" onclick="closeMob()">Process</a>
         <a href="#leadership" onclick="closeMob()">Leadership</a>
         <a href="#contact" onclick="closeMob()">Contact</a>
+        <div class="mob-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
     </div>
 
     <!-- HERO -->
