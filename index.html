@@ -968,8 +968,8 @@
         }
 
         .lead-avatar {
-            width: 52px;
-            height: 52px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             background: var(--grad);
             padding: 2px;
@@ -992,6 +992,41 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             background-color: var(--dark);
+            overflow: hidden;
+            position: relative;
+            color: transparent;
+        }
+
+        .lead-avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lead-avatar-inner::after {
+            content: attr(data-fallback);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+        }
+
+        .lead-avatar-inner.no-photo::after {
+            opacity: 1;
+        }
+
+        .lead-avatar-inner.no-photo img {
+            display: none;
         }
 
         .lead-info-name {
@@ -1237,6 +1272,57 @@
             color: var(--green);
         }
 
+        .toast-wrap {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 150;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .toast {
+            min-width: 280px;
+            max-width: 360px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: rgba(10, 45, 82, 0.96);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+            transform: translateY(14px);
+            opacity: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            border-color: rgba(61, 190, 110, 0.45);
+        }
+
+        .toast.error {
+            border-color: rgba(243, 171, 45, 0.55);
+        }
+
+        .toast-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .toast-text {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
         /* REVEAL */
         .reveal {
             opacity: 0;
@@ -1350,6 +1436,17 @@
 
             .proc-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .toast-wrap {
+                right: 14px;
+                left: 14px;
+                bottom: 14px;
+            }
+
+            .toast {
+                min-width: 0;
+                max-width: none;
             }
         }
     </style>
@@ -1622,7 +1719,9 @@
                     work for them. That's what we wake up to build every single day.</p>
                 <div class="lead-person">
                     <div class="lead-avatar">
-                        <div class="lead-avatar-inner">SM</div>
+                        <div class="lead-avatar-inner no-photo" data-fallback="MP">
+                            <img src="white_theme_logo.png" alt="Manoj Panta">
+                        </div>
                     </div>
                     <div>
                         <div class="lead-info-name">Manoj Panta</div>
@@ -1636,7 +1735,9 @@
                     of every line of code we ship and every relationship we build.</p>
                 <div class="lead-person">
                     <div class="lead-avatar">
-                        <div class="lead-avatar-inner">AM</div>
+                        <div class="lead-avatar-inner no-photo" data-fallback="SB">
+                            <img src="white_theme_logo.png" alt="Sandesh Bhandari">
+                        </div>
                     </div>
                     <div>
                         <div class="lead-info-name">Sandesh Bhandari</div>
@@ -1687,15 +1788,21 @@
                 </div>
             </div>
         </div>
-        <form class="cf reveal d1" onsubmit="send(event)">
+        <form class="cf reveal d1" id="contactForm" onsubmit="send(event)">
+            <input type="hidden" name="_subject" value="New BIRVEX contact form submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <div class="cf-row">
-                <div class="fg"><label>First Name</label><input type="text" placeholder="Aarav" required></div>
-                <div class="fg"><label>Last Name</label><input type="text" placeholder="Shrestha" required></div>
+                <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Aarav"
+                        required></div>
+                <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Shrestha"
+                        required></div>
             </div>
-            <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
+            <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required>
+            </div>
             <div class="fg">
                 <label>Service</label>
-                <select>
+                <select name="service">
                     <option value="">Select a service...</option>
                     <option>Web Development</option>
                     <option>Mobile App</option>
@@ -1706,7 +1813,8 @@
                     <option>Other</option>
                 </select>
             </div>
-            <div class="fg"><label>Message</label><textarea placeholder="Tell us about your project..."></textarea>
+            <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your project..."
+                    required></textarea>
             </div>
             <button type="submit" class="cf-btn">Send Message →</button>
         </form>
@@ -1723,6 +1831,8 @@
             <a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a>
         </div>
     </footer>
+
+    <div class="toast-wrap" id="toastWrap"></div>
 
     <script>
         // Hamburger
@@ -1760,13 +1870,76 @@
         window.addEventListener('resize', updateNav);
         updateNav();
 
+        function showToast(type, title, text) {
+            const wrap = document.getElementById('toastWrap');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<div class="toast-title">${title}</div><div class="toast-text">${text}</div>`;
+            wrap.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 250);
+            }, 3200);
+        }
+
+        document.querySelectorAll('.lead-avatar-inner img').forEach(img => {
+            img.addEventListener('error', () => {
+                img.parentElement.classList.add('no-photo');
+            });
+            img.addEventListener('load', () => {
+                if (img.naturalWidth < 20 || img.naturalHeight < 20) {
+                    img.parentElement.classList.add('no-photo');
+                } else {
+                    img.parentElement.classList.remove('no-photo');
+                }
+            });
+        });
+
         // Form submit
-        function send(e) {
+        async function send(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('.cf-btn');
-            btn.textContent = "✓ Sent! We'll be in touch soon.";
-            btn.style.background = 'linear-gradient(120deg,#2AA87A,#1558A0)';
-            setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; e.target.reset(); }, 3500);
+            const form = e.target;
+            const btn = form.querySelector('.cf-btn');
+            const originalText = btn.textContent;
+            const formData = new FormData(form);
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            btn.style.opacity = '0.8';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/pantamanoj08@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || result.success === 'false') {
+                    throw new Error('Submission failed');
+                }
+
+                btn.textContent = 'Message Sent';
+                btn.style.background = 'linear-gradient(120deg,#2AA87A,#1558A0)';
+                showToast('success', 'Message sent', 'Your message was sent to the admin email successfully.');
+                form.reset();
+            } catch (error) {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                showToast('error', 'Sending failed', 'The form could not be delivered right now. Please try again in a moment.');
+            } finally {
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                    btn.style.opacity = '';
+                    if (btn.textContent === originalText) {
+                        btn.style.background = '';
+                    }
+                }, 1800);
+            }
         }
     </script>
 </body>
