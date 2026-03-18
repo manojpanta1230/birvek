@@ -30,6 +30,19 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    font-size: 16px !important;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.s-title {
+    font-size: clamp(18px, 2vw, 20px) !important;
+}
+
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -133,6 +146,11 @@ nav {
 }
 
 .nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-links a.active,
+.mob-menu a.active {
     color: var(--white);
 }
 
@@ -533,6 +551,16 @@ section {
     padding: 88px 6vw;
 }
 
+.page-hero {
+    background: var(--surface);
+    padding: 220px 6vw 90px;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero .s-sub {
+    max-width: 680px;
+}
+
 .s-tag {
     font-size: 0.65rem;
     font-weight: 700;
@@ -659,7 +687,7 @@ section {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 30px;
     align-items: start;
-    max-width: 1120px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -881,6 +909,223 @@ section {
 .about-side-cta:hover {
     border-color: var(--green);
     transform: translateY(-1px);
+}
+
+/* HOME EXTRA */
+#home-extra {
+    background: linear-gradient(180deg, var(--surface) 0%, #0f3b68 100%);
+}
+
+.extra-head {
+    margin-bottom: 34px;
+}
+
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.extra-card {
+    background: rgba(10, 45, 82, 0.75);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.extra-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(243, 171, 45, 0.55);
+    box-shadow: 0 12px 32px rgba(4, 22, 41, 0.35);
+}
+
+.extra-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(243, 171, 45, 0.35);
+    background: rgba(243, 171, 45, 0.12);
+    color: var(--green);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.extra-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.extra-card p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+
+.extra-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.extra-card li {
+    font-size: 0.8rem;
+    color: rgba(245, 249, 255, 0.86);
+    line-height: 1.45;
+    position: relative;
+    padding-left: 14px;
+}
+
+.extra-card li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+#home-clients {
+    background: var(--surface);
+    padding-top: 26px;
+}
+
+.clients-head {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 24px;
+}
+
+.clients-head .s-sub {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.clients-marquee {
+    overflow: hidden;
+    border: 1px solid rgba(45, 99, 151, 0.75);
+    border-radius: 14px;
+    background: rgba(10, 45, 82, 0.65);
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.clients-track {
+    display: flex;
+    width: max-content;
+    gap: 14px;
+    padding: 16px 14px;
+    animation: client-scroll 30s linear infinite;
+}
+
+.client-logo {
+    width: 180px;
+    height: 82px;
+    border-radius: 10px;
+    background: rgba(245, 249, 255, 0.06);
+    border: 1px solid rgba(45, 99, 151, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.client-logo img {
+    max-width: 132px;
+    max-height: 54px;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+}
+
+@keyframes client-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+#home-faq {
+    background: var(--surface);
+    padding: 34px 6vw 74px;
+}
+
+.faq-head {
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto 18px;
+}
+
+.faq-head .s-sub {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.faq-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(45, 99, 151, 0.75);
+    background: rgba(10, 45, 82, 0.58);
+    box-shadow: 0 16px 34px rgba(6, 26, 48, 0.26);
+}
+
+.faq-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.faq-grid details {
+    text-align: left;
+    border: 1px solid rgba(45, 99, 151, 0.65);
+    border-radius: 9px;
+    padding: 11px 13px;
+    background: rgba(17, 65, 113, 0.45);
+}
+
+.faq-grid summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(245, 249, 255, 0.94);
+}
+
+.faq-grid summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-grid p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.62;
+}
+
+.faq-shell .about-side-cta {
+    display: inline-flex;
+    margin-top: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clients-track {
+        animation: none;
+    }
 }
 
 /* PROCESS */
@@ -1208,6 +1453,13 @@ section {
     border-color: var(--teal);
 }
 
+.fg input.field-invalid,
+.fg textarea.field-invalid,
+.fg select.field-invalid {
+    border-color: #f8bf59;
+    box-shadow: 0 0 0 2px rgba(248, 191, 89, 0.2);
+}
+
 .fg textarea {
     resize: vertical;
     min-height: 110px;
@@ -1448,6 +1700,24 @@ footer {
     #contact {
         grid-template-columns: 1fr;
         gap: 44px;
+    }
+
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-shell {
+        padding: 14px;
+    }
+
+    .client-logo {
+        width: 150px;
+        height: 72px;
+    }
+
+    .client-logo img {
+        max-width: 112px;
+        max-height: 48px;
     }
 
     .nav-links,
