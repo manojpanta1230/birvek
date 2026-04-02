@@ -41,8 +41,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.s-title {
+h6{
     font-size: clamp(18px, 2vw, 20px) !important;
 }
 
@@ -1662,11 +1661,11 @@ footer {
 }
 
 .team-page .page-hero {
-    padding: 230px 6vw 110px;
+    padding: 170px 6vw 52px;
 }
 
 .team-page .page-hero .s-title {
-    font-size: clamp(2.2rem, 4.6vw, 3.2rem);
+    font-size: clamp(2.7rem, 5.2vw, 4rem);
 }
 
 .team-page .page-hero .s-sub {
@@ -1852,7 +1851,7 @@ footer {
     }
 
     .team-page .page-hero {
-        padding: 190px 6vw 88px;
+        padding: 145px 6vw 44px;
     }
 }
 
@@ -1864,7 +1863,7 @@ footer {
     }
 
     .team-page .page-hero {
-        padding: 130px 6vw 62px;
+        padding: 112px 6vw 30px;
     }
 }
  
