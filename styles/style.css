@@ -41,7 +41,7 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
     font-size: clamp(18px, 2vw, 20px) !important;
 }
 
@@ -1649,6 +1649,7 @@ footer {
 .d3 {
     transition-delay: 0.24s
 }
+
 .page {
     width: min(1400px, 100%);
     margin: 0 auto 56px;
@@ -1661,7 +1662,7 @@ footer {
 }
 
 .team-page .page-hero {
-    padding: 170px 6vw 52px;
+    padding: 170px 6vw 0px;
 }
 
 .team-page .page-hero .s-title {
@@ -1672,177 +1673,177 @@ footer {
     max-width: 760px;
     font-size: 1.02rem;
 }
- 
+
 /* ── Card ── */
 .card {
     width: 100%;
-        max-width: 320px;
-        min-height: 430px;
-        margin: 0;
-  border-radius: 24px;
-  overflow: hidden;
+    max-width: 320px;
+    min-height: 430px;
+    margin: 0;
+    border-radius: 24px;
+    overflow: hidden;
     border: 1px solid var(--border);
     background: linear-gradient(165deg, #114171 0%, #184f84 55%, #0d3561 100%);
     box-shadow: 0 20px 56px rgba(6, 28, 51, 0.4);
-  position: relative;
+    position: relative;
 }
- 
+
 /* Circular ring decorations */
 .card::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  left: -60px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
     border: 2px solid rgba(125, 167, 216, 0.2);
-  pointer-events: none;
+    pointer-events: none;
 }
- 
+
 .card::after {
-  content: '';
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
     border: 2px solid rgba(125, 167, 216, 0.14);
-  pointer-events: none;
+    pointer-events: none;
 }
- 
+
 /* ── Arc SVG ── */
 .arc-lines {
-  position: absolute;
-  right: -30px;
-  top: 40px;
-  width: 200px;
-  height: 300px;
-  opacity: 0.07;
-  pointer-events: none;
+    position: absolute;
+    right: -30px;
+    top: 40px;
+    width: 200px;
+    height: 300px;
+    opacity: 0.07;
+    pointer-events: none;
 }
- 
+
 /* ── Logo area ── */
 .card-top {
-  padding: 20px 20px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  z-index: 2;
+    padding: 20px 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
 }
- 
+
 .logo-hex {
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
 }
- 
+
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
 }
- 
+
 .logo-text .brand {
-  font-size: 13px;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
- 
+
 .logo-text .sub {
-  font-size: 7px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
- 
+
 /* ── Photo ── */
 .photo-wrap {
-  display: flex;
-  justify-content: center;
-  padding: 24px 20px 0;
-  position: relative;
-  z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px 0;
+    position: relative;
+    z-index: 2;
 }
- 
+
 .photo-frame {
-  width: 200px;
-  height: 220px;
-  border-radius: 20px;
+    width: 200px;
+    height: 220px;
+    border-radius: 20px;
     background: rgba(13, 53, 97, 0.88);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     border: 2px solid rgba(45, 99, 151, 0.75);
 }
- 
+
 /* Replace .photo-placeholder with an <img> when you have a real photo */
 .photo-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
- 
+
 .photo-placeholder svg {
-  width: 64px;
-  height: 64px;
-  opacity: 0.3;
+    width: 64px;
+    height: 64px;
+    opacity: 0.3;
 }
- 
+
 .upload-hint {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.5px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.5px;
 }
- 
+
 .photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
 }
- 
+
 /* ── Name & Role ── */
 .card-bottom {
-  padding: 20px 20px 28px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+    padding: 20px 20px 28px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
- 
+
 .member-name {
-  font-size: 22px;
-  font-weight: 800;
+    font-size: 22px;
+    font-weight: 800;
     background: var(--grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1.1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.1;
 }
- 
+
 .divider {
-  width: 40px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 10px auto;
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px auto;
 }
- 
+
 .member-role {
-  font-size: 11px;
-  font-weight: 700;
+    font-size: 11px;
+    font-weight: 700;
     color: var(--muted);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1200px) {
@@ -1866,7 +1867,7 @@ footer {
         padding: 112px 6vw 30px;
     }
 }
- 
+
 
 @keyframes up {
     from {
