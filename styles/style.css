@@ -1959,6 +1959,7 @@ footer {
     .hero-content {
         flex-direction: column;
         gap: 32px;
+        height: 50vh;
     }
 
     .hero-left,
