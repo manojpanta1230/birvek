@@ -25,36 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!isHomePage) return;
 
-    const modal = document.createElement('div');
-    modal.className = 'home-image-modal';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Featured image popup');
-
-    modal.innerHTML = `
-        <div class="home-image-modal-card">
-            <button type="button" class="home-image-modal-close" aria-label="Close popup">&times;</button>
-            <img src="/assets/images/suraj_dai.png" alt="suraj_dai" class="home-image-modal-image" />
-        </div>
-    `;
-
-    const closeModal = () => {
-        modal.classList.remove('show');
-        setTimeout(() => modal.remove(), 180);
-        document.removeEventListener('keydown', onEscape);
-    };
-
-    const onEscape = e => {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    };
-
-    modal.addEventListener('click', e => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
+    
 
     const closeBtn = modal.querySelector('.home-image-modal-close');
     closeBtn?.addEventListener('click', closeModal);
