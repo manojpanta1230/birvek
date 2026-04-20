@@ -1,3 +1,32 @@
+/* Team member social icons */
+.team-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+.team-social a {
+    color: var(--muted);
+    background: rgba(245, 249, 255, 0.07);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+
+.team-social a:hover {
+    color: var(--green);
+    background: rgba(243, 171, 45, 0.13);
+    border-color: var(--green);
+}
+
 :root {
     --green: #f3ab2d;
     --blue: #5f90cb;
