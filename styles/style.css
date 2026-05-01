@@ -1059,6 +1059,7 @@ section {
     gap: 14px;
     padding: 16px 14px;
     animation: client-scroll 30s linear infinite;
+    background-color: white;
 }
 
 .client-logo {
