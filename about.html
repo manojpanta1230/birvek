@@ -30,21 +30,56 @@
 
         <!-- JSON-LD Schema Markup -->
         <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://birvex.tech/"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "About",
-            "item": "https://birvex.tech/about"
-          }]
-        }
+                [
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [{
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://birvex.tech/"
+                        },{
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "About",
+                            "item": "https://birvex.tech/about"
+                        }]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [{
+                            "@type": "Question",
+                            "name": "What does BIRVEX Tech do?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "BIRVEX Tech is a product-focused software team in Kathmandu that helps startups and growing businesses launch practical digital products."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "Do you offer transparent pricing?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. The About page highlights fixed, transparent pricing models based on real-world delivery metrics."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "How fast do you respond to new inquiries?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "The team states an average response time of 24 hours."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "Do you provide support after launch?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. The site says post-launch support is available and that the team shares clear weekly updates with real deliverables."
+                            }
+                        }]
+                    }
+                ]
         </script>
     </head>
 
